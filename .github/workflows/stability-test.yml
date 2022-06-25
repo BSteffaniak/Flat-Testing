@@ -30,6 +30,17 @@ jobs:
     - name: Build CLI
       run: mvn -f Nova install
 
+    - name: Build Stability Test
+      run: |
+        java -jar Nova/target/nova-cli-1.0-SNAPSHOT-jar-with-dependencies.jar \
+          ../Nova-Testing/example ../Nova-Testing/stabilitytest \
+          -l ../Nest \
+          -install-dir ../Nova-Testing/example \
+          -d ../NovaCompilerOutput/js/src \
+          -main stabilitytest/StabilityTest \
+          -o bin/ExecutableJS \
+          -target js
+
     - uses: actions/setup-node@v3
       with:
         node-version: 14
