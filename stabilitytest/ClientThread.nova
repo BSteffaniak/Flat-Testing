@@ -10,39 +10,35 @@ import "novex/nest/TestSuite"
 import static "novex/nest/Nest"
 
 class ClientThread extends Thread {
-    Int port
-    
-    OutputStream out
-    
     public construct(private Int port, private OutputStream out) {}
-    
+
     public run() {
         ClientSocket client = new ClientSocket()
-        
+
         String ip = "127.0.0.1"
-        
+
         out.write("ClientSocket attempting to connect to #ip:#{port}... ")
-        
+
         expect(client.connect(ip, port)).toBe(true, "Failed to connect to localhost server")
-        
+
         out.writeLine("Success")
-        
+
         out.writeLine("Waiting for String from ServerSocket...")
-        
+
         String s = client.connection.in.readString()
-        
+
         expect(s.count == NetworkStability.received.count && s == NetworkStability.received).toBe(true, "Client unable to receive the correct message from server")
-        
+
         out.write("Attempting to send String to ServerSocket... ")
-        
+
         client.connection.out.write(NetworkStability.received)
-        
+
         out.writeLine("Success")
-        
+
         out.write("Attempting to close ClientSocket... ")
-        
+
         expect(client.close()).toBe(true, "Unable to close Client connection")
-        
+
         out.writeLine("Success")
     }
 }
