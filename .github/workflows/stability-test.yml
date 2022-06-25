@@ -38,11 +38,13 @@ jobs:
 
     - name: Build Stability Test
       run: |
+        pwd
+        ls
+        ls ..
         java -jar Nova/target/nova-cli-1.0-SNAPSHOT-jar-with-dependencies.jar \
           example stabilitytest \
           -l Nest \
           -install-dir example \
-          -d ../NovaCompilerOutput/js/src \
           -main stabilitytest/StabilityTest \
           -o example/bin/ExecutableJS \
           -target js
