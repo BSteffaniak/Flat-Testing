@@ -43,6 +43,10 @@ jobs:
         -Dpackaging=jar \
         -DgeneratePom=true
 
+    - name: Build JS Writer
+      run: |
+        mvn -f Nova-js install
+
     - name: Build Stability Test
       run: |
         java -jar Nova/target/nova-cli-1.0-SNAPSHOT-jar-with-dependencies.jar \
