@@ -38,10 +38,6 @@ jobs:
 
     - name: Build Stability Test
       run: |
-        pwd
-        ls
-        echo hey
-        ls ..
         java -jar Nova/target/nova-cli-1.0-SNAPSHOT-jar-with-dependencies.jar \
           example stabilitytest \
           -l Nest \
