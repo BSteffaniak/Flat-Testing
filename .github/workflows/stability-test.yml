@@ -47,6 +47,12 @@ jobs:
       run: |
         mvn -f Nova-JS install
 
+    - name: Checkout Nest library
+      uses: actions/checkout@master
+      with:
+        repository: NovaFoundation/Nest
+        path: Nest
+
     - name: Build Stability Test
       run: |
         java -jar Nova/target/nova-cli-1.0-SNAPSHOT-jar-with-dependencies.jar \
