@@ -51,7 +51,7 @@ jobs:
       uses: actions/checkout@master
       with:
         repository: NovaFoundation/Standard-Library
-        path: ../Standard-Library
+        path: Standard-Library
 
     - name: Checkout Nest library
       uses: actions/checkout@master
