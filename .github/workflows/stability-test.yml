@@ -47,6 +47,12 @@ jobs:
       run: |
         mvn -f Nova-JS install
 
+    - name: Checkout Standard library
+      uses: actions/checkout@master
+      with:
+        repository: NovaFoundation/Standard-Library
+        path: ../Standard-Library
+
     - name: Checkout Nest library
       uses: actions/checkout@master
       with:
