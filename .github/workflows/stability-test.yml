@@ -72,3 +72,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 14
+
+    - name: Run Stability Test
+      run: |
+        node example/bin/ExecutableJS.js
