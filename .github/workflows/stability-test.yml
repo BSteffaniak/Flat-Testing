@@ -45,7 +45,7 @@ jobs:
 
     - name: Build JS Writer
       run: |
-        mvn -f Nova-js install
+        mvn -f Nova-JS install
 
     - name: Build Stability Test
       run: |
