@@ -6,8 +6,6 @@ import "nova/thread/Thread"
 
 class BankClient {
     public static main(String[] args) {
-        ClientSocket socket = new ClientSocket()
-
         String[] ips  = [ "192.168.1.139", "192.168.1.101", "10.0.53.54", "127.0.0.1" ]
         Int      port = 5675
 
@@ -16,7 +14,9 @@ class BankClient {
 
             Console.writeLine("Attempting connection on IP: " + ip)
 
-            if (socket.connect(ip, port)) {
+            let socket = new ClientSocket(ip, port)
+
+            if (socket.connect()) {
                 Console.writeLine("Connected!")
 
                 ClientConnectionThread thread = new ClientConnectionThread(socket.connection)
@@ -54,6 +54,8 @@ class BankClient {
                 }
 
                 thread.join()
+
+                socket.close()
 
                 break
             }
