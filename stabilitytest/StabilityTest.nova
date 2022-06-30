@@ -32,6 +32,7 @@ import "novex/nest/TestResult"
     IntervalStability,
     BoundedIntervalStability,
     BoundlessIntervalStability,
+    NetworkStability,
     CastStability
 ]]
 [Target c]
@@ -39,7 +40,6 @@ import "novex/nest/TestResult"
     TimeStability,
     ThreadStability,
     FileStability,
-    NetworkStability,
     RegexStability
 ]]
 class StabilityTest {

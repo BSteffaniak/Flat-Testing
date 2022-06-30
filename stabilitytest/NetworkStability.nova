@@ -3,6 +3,7 @@ package "stabilitytest"
 import "nova/network/ServerSocket"
 import "nova/network/ClientSocket"
 import "nova/network/ConnectionSocket"
+import "nova/thread/Thread"
 
 import "novex/nest/Nest"
 import "novex/nest/TestSuite"
@@ -10,50 +11,54 @@ import "novex/nest/TestSuite"
 import static "novex/nest/Nest"
 
 testable class NetworkStability {
-    visible static final String received = "THIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVED"
-    
-    visible static final Int PORT = 24243
-    
-    [Test "Testing creating a ServerSocket"]
-    createServer() -> ServerSocket {
-        let socket = new ServerSocket()
-        
-        expect(socket.start(PORT)).toNotBe(null, "Unable to start server on port #PORT")
-        expect(socket.close()).toBe(true, "Failed to close server socket on port #PORT")
-    }
-    
-    [Test message: false]
-    public test() {
-        out.writeLine("Testing network stability")
-        
-        ServerSocket server = new ServerSocket().start(PORT)
-        
-        ClientThread thread = new ClientThread(PORT, out)
-        
-        thread.start()
-        
-        out.writeLine("Accepting ClientSocket connection")
-        
-        ConnectionSocket connection = server.acceptClient()
-        
-        expect(connection).toNotBe(null, "Failed to accept the client")
-        
-        out.writeLine("Sending String to ClientSocket...")
-        
-        expect(connection.out.write(received)).toNotBe(null, "Server unable to send data to client")
-        
-        out.writeLine("Waiting for String from ClientSocket...")
-        
-        String s = connection.in.readString()
-        
-        expect(s.count == received.count && s == received).toBe(true, "Server unable to receive correct message from client. Expected message of size #received.count, but received of size #s.count")
-        
-        thread.join()
-        
-        out.write("Attempting to close ServerSocket connection... ")
-        
-        expect(server.close()).toBe(true, "Unable to close server")
+    visible static final String RECEIVED = "THIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVED"
 
-        out.writeLine("Success")
+    visible static final Int PORT = 24243
+
+    [Test "Testing Sockets"]
+    public async test() {
+        out.writeLine("Testing network stability")
+
+        let server = await new ServerSocket():start(PORT)
+
+        let receivedClientAsync = server.onAsync("client_connected")
+
+        out.write("Accepting ClientSocket connection")
+
+        let responseDataAsync = server.onAsync("data")
+
+        let client = new ClientSocket("localhost", PORT)
+
+        client.connect()
+
+        let receivedClient = await receivedClientAsync
+
+        expect(receivedClient).toNotBe(null, "Failed to accept the client")
+
+        out.writeLine(" - Success")
+
+        out.write("Sending String to ClientSocket")
+
+        expect(client.write(RECEIVED)).toNotBe(null, "Server unable to send data to client")
+
+        out.writeLine(" - Success")
+
+        out.write("Waiting for String from ClientSocket")
+
+        let responseData = await responseDataAsync
+
+        expect(responseData.count == RECEIVED.count && responseData == RECEIVED).toBe(true, "Server unable to receive correct message from client. Expected message of size #RECEIVED.count, but received of size #responseData.count")
+
+        out.writeLine(" - Success")
+
+        out.write("Attempting to close ClientSocket connection")
+
+        expect(client.close()).toNotBe(null, "Unable to close client connection")
+
+        out.writeLine(" - Success")
+
+        out.write("Attempting to close ServerSocket connection ")
+
+        expect(server.close()).toNotBe(null, "Unable to close server")
     }
 }
