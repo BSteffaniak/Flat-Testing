@@ -1,6 +1,6 @@
 package "stabilitytest"
 
-import "nova/datastruct/list/Iterator"
+import "flatlang/datastruct/list/Iterator"
 
 import "novex/nest/Nest"
 import "novex/nest/TestSuite"

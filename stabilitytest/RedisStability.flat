@@ -1,6 +1,6 @@
 package "stabilitytest"
 
-import "nova/redis/RedisConnection"
+import "flatlang/redis/RedisConnection"
 
 import "novex/nest/Nest"
 import "novex/nest/TestSuite"
@@ -10,7 +10,7 @@ import static "novex/nest/Nest"
 testable class RedisStability {
      var RedisConnection connection
 
-    
+
 
     [Test "Testing Redis get"]
     testRedisGet() {

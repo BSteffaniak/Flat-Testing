@@ -1,6 +1,6 @@
 package "bank"
 
-import "nova/database/ResultSet"
+import "flatlang/database/ResultSet"
 
 class Estimator {
     public static getMonthlyProfit(ResultSet set) -> Double {

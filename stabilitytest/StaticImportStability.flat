@@ -4,10 +4,10 @@ import "novex/nest/Nest"
 import "novex/nest/TestSuite"
 
 import static "novex/nest/Nest"
-import static "nova/math/Math"
+import static "flatlang/math/Math"
 
 [ExpectCompileError SyntaxErrorException]
-import static nova/math/Math
+import static flatlang/math/Math
 
 testable class StaticImportStability {
     [Test "Testing math static imports"]

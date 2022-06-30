@@ -1,156 +1,156 @@
 // Testing single line comment on first line.
 package "example"
 
-import "nova/math/logic/WFF"
-import "nova/math/logic/InvalidFormulaException"
-import "nova/math/logic/StatementLetter"
-import "nova/datastruct/HashMap"
-import "nova/math/Vector3D"
-import "nova/math/Matrix"
-import "nova/network/ServerSocket"
-import "nova/star/Window"
-import "nova/math/NumericStatement"
-import "nova/datastruct/BinaryTree"
-import "nova/datastruct/list/Array"
-import "nova/datastruct/list/IntArray"
-import "nova/datastruct/list/Iterator"
-import "nova/datastruct/list/LinkedList"
-import "nova/datastruct/list/List"
-import "nova/io/Curl"
-import "nova/meta/Library"
-import "nova/thread/Thread"
-import "nova/thread/ThreadLocal"
-import "nova/time/Timer"
+import "flatlang/math/logic/WFF"
+import "flatlang/math/logic/InvalidFormulaException"
+import "flatlang/math/logic/StatementLetter"
+import "flatlang/datastruct/HashMap"
+import "flatlang/math/Vector3D"
+import "flatlang/math/Matrix"
+import "flatlang/network/ServerSocket"
+import "flatlang/star/Window"
+import "flatlang/math/NumericStatement"
+import "flatlang/datastruct/BinaryTree"
+import "flatlang/datastruct/list/Array"
+import "flatlang/datastruct/list/IntArray"
+import "flatlang/datastruct/list/Iterator"
+import "flatlang/datastruct/list/LinkedList"
+import "flatlang/datastruct/list/List"
+import "flatlang/io/Curl"
+import "flatlang/meta/Library"
+import "flatlang/thread/Thread"
+import "flatlang/thread/ThreadLocal"
+import "flatlang/time/Timer"
 
 class Lab {
     static thread_local var Int local = 122
-    
+
     public static main(String[] args) {
         //var v = new Vector2D(2, 3)
-        
+
         //Console.writeLine(v.x + ", " + v.y)
-        
+
         // let jargs = ["curl", "https://www.quandl.com/api/v3/datasets/WIKI/TSLA/data.json?rows=3&start_date=2012-11-01&end_date=2013-11-30&order=asc&collapse=quarterly&transform=rdiff&api_key=fKoHCrUdm8GUcCWhRcTs"]
-        
+
         // let curl = System.execute(jargs)
-        
+
         // while (var line = curl.reader.readString()) {
         //     Console.log("==============GOT: " + line)
         // }
-        
+
         // Console.log("Done reading.")
-        
+
         let strData = ["F", "B", "A", "D", "C", "E", "G", "I", "H"]
         let otherStrData = ["F", "B", "A", "D"]
-        
+
         var tree = new BinaryTree(strData)
-        
+
         Console.writeLine("Preorder: #{tree.preorder().join(", ")}")
         Console.writeLine("Inorder: #{tree.inorder().join(", ")}")
         Console.writeLine("Postorder: #{tree.postorder().join(", ")}")
         Console.writeLine("Levelorder: #{tree.levelorder().join(", ")}")
-        
+
         var Int num1 = 4
         var Int num2
-        
+
         num2 = num1 = 7
-        
+
         Console.writeLine("My nums: #num1, #num2 hey: #tree.inorder()!")
-        
+
         Console.log("MergeSorted array: #strData.mergeSort()")
         Console.log("QuickSorted array: #strData.quickSort()")
-        
+
         Console.log("Concatted arrays: #{strData + otherStrData}")
         Console.log("Concatted sorted array: #{(strData + otherStrData).sort()}")
-        
+
         Console.log("Multiplied string: #{"hey" * 4}")
-        
+
         Console.writeLine("Result from ternary: #num1 #{ num1 < 3 ? "<" : ">=" } 3")
-        
+
         var str = "this isnt null"
         var str2 = null
-        
+
         Console.writeLine("Normal: #{"hello".surroundWith("hey ")}")
         Console.writeLine("Symmetrical: #{"hello".surroundWith("hey ", true)}")
-        
+
         Console.writeLine("Elvis not null: #{str ?: "wtf"}")
         Console.writeLine("Elvis null: #{str2 ?: "this is null"}")
-        
+
         "test".substring(0)
-        
+
         Console.writeLine("#2..8: #{(2..8).join(", ")}")
-        
+
         var list = ["this", "is", "a", "test", "to", "see", "what shows up"]
         var list2 = [1, 2, 3, 4, 5, 6, 7]
-        
+
         Console.log("List2 #list2")
-        
+
         list2.add(9).add(2)
-        
+
         Console.log(list.map({ "'#_'" }).toEnglish("and"))
         Console.log(list.map({ "'#_'" }).toEnglish("and", false))
-        
+
         //Console.writeLine("Sum: #list2.sum()")
-        
+
         /*list.filter({ _.count > 10 }).map({ getClassByName(_) })
             .forEach(x => {
                 Console.writeLine(x.fields.map({ _.name }).join(", "))
             })*/
-        
+
         Console.log("Main local unset: #local")
         local = 10
         Console.log("Main local set: #local")
-        
+
         Async.execute({
             Console.log("Async local unset: #local")
             local = 5
             Console.log("Async local set: #local")
-            
+
             Console.writeLine("Wait a second!")
             Thread.sleep(1000)
             Console.writeLine("ok, now what")
-            
+
             Console.log("Async local at end: #local")
         })
-        
+
         var sss = new String[4][2][1]
-        
+
         Console.writeLine(sss)
-        
+
         Console.writeLine("Started async execution")
-        
+
         var multi = new String[][]
-        
+
         multi.add(["This is a test", "index 2"])
         multi.add(["Second dimension yo", "waddup"])
-        
+
         Console.writeLine("Multi dimensional array: #multi")
         Console.writeLine(multi[0][0].chars.toCharArray().contains('z').toString().capitalize())
-        
+
         Console.writeLine(list.map(x => {
             var something = 5 * x.count
-            
+
             return "#something #x"
         }).join(", "))
-        
+
         Console.writeLine("Mapped: " + list.filter({ _.count >= 4 }).map({ "#_2: #_1?" }).join(", "))
         Console.writeLine("Mapped backwards: " + list.filter({ _.count >= 4 }).map({ "#_?" }).reverse().join(", "))
         Console.writeLine("Mapped2: " + list2.map({ "#_!" }).join(", "))
-        
+
         //doSomething(list)
         //doSomething(list2)
-        
+
         var linked = new LinkedList()
-        
+
         linked.addAll(["test", "test2", "test3"])
-        
+
         Console.writeLine("Linked list backwards: " + linked.reverse().join(", "))
         Console.writeLine("Linked list forwards: " + linked.join(", "))
-        
+
         var x = "Hey its a string"
-        
+
         Console.writeLine(x)
-        
+
         takesString(x)
 
         if (true) {
@@ -162,25 +162,25 @@ class Lab {
 
         let aaa = ["one", "two", "three"]
         let bbb = [1, 2, 3, 4, 5]
-        
+
         aaa.zip(bbb, { _.count * _ }).forEach({
             Console.log("Got #_")
         })
 
         //x.add("hey")
         //x.add("its now an array")
-        
+
         Console.writeLine(x)
-        
+
         var sq = new Square(4)
 
         Console.writeLine(getArea(sq))
-        
+
         var v1 = new Vector3D(2, 1, 8)
         var v2 = new Vector3D(5, 3, 2)
-        
+
         Console.writeLine("#v1 X #v2 = #v1.crossProduct(v2)")
-        
+
         var matrix1 = new Matrix(2, 3)
         matrix1[0][0] = 1
         matrix1[0][1] = 2
@@ -188,7 +188,7 @@ class Lab {
         matrix1[1][0] = 4
         matrix1[1][1] = 5
         matrix1[1][2] = 6
-        
+
         var matrix2 = new Matrix(3, 2)
         matrix2[0][0] = 7
         matrix2[0][1] = 8
@@ -196,13 +196,13 @@ class Lab {
         matrix2[1][1] = 10
         matrix2[2][0] = 11
         matrix2[2][1] = 12
-        
+
         Console.writeLine("Matrix:\n#matrix1")
         Console.writeLine("Matrix:\n#matrix1.transpose()")
         Console.writeLine("Matrix:\n#matrix2")
         Console.writeLine("Matrix:\n#{matrix1 * matrix2}")
         Console.writeLine("Matrix:\n#{matrix1.transpose() + matrix2}")
-        
+
         var matrix3 = new Matrix(3, 3)
         matrix3[0][0] = 6
         matrix3[0][1] = 1
@@ -213,115 +213,115 @@ class Lab {
         matrix3[2][0] = 2
         matrix3[2][1] = 8
         matrix3[2][2] = 7
-        
+
         Console.writeLine("Determinant of\n#matrix3\nis #matrix3.determinant()")
-        
+
         Matrix.identity(4)[0][0] = 5
-        
+
         Console.writeLine("4x4 Identity:\n#Matrix.identity(4)")
         Console.writeLine("12x12 Identity:\n#Matrix.identity(12)")
         Console.writeLine("8x8 Identity:\n#Matrix.identity(8)")
-        
+
         Console.writeLine("Inverse of 3x3 matrix:\n#matrix3.inverse()")
-        
+
         let l = new Lab()
-        
+
         l.chainable().chainable()
-        
+
         immutable String[] myImmutableArray = ["one", "two", "three"]
-        
+
         Console.log("Immutable: #myImmutableArray")
-        
+
         let outputArray = myImmutableArray.add("four")
-        
+
         Console.log("Modified(#myImmutableArray.count): #myImmutableArray")
         Console.log("Output(#outputArray.count): #outputArray")
-        
+
         loadLibrary()
-        
+
         Console.log("Main local at end: #local")
-        
+
         benchmarkThreadLocals()
         benchmarkThreadLocals()
-        
+
         Console.waitForEnter()
     }
-    
+
     [Target c]
     static loadLibrary() {
         Console.log("Loading library... ")
-        
+
         let lib = new Library("C:/Users/Braden/GitHub/NovaWorkspace/testlib").load()
-        
+
         let func = lib.getFunction("staticFunc", "nova/test/Test")
-        
+
         func()
     }
-    
+
     [Target not c]
     static loadLibrary() {}
-    
+
     static thread_local var Int bench1
     static var Int bench2
-    
+
     static benchmarkThreadLocals() {
         let timer = new Timer()
-        
+
         Console.write("Running local mutate... ")
-        
+
         timer.start()
         setThreadLocalMutate()
         timer.stop()
-        
+
         Console.log("Took #timer.duration")
-        
+
         Console.write("Running static mutate... ")
-        
+
         timer.start()
         setStatic()
         timer.stop()
-        
+
         Console.log("Took #timer.duration")
-        
+
         Console.write("Running local access... ")
-        
+
         timer.start()
         setThreadLocalAccess()
         timer.stop()
-        
+
         Console.log("Took #timer.duration")
     }
-    
+
     static setThreadLocalMutate() {
         for (i in 0..1_000_000) {
             bench1 = 10
         }
     }
-    
+
     static setThreadLocalAccess() {
         for (i in 0..1_000_000) {
             let x = bench1
         }
     }
-    
+
     static setStatic() {
         for (i in 0..1_000_000) {
             bench2 = 10
         }
     }
-    
+
     chainable() => this {
         Console.writeLine("in chainable")
     }
-    
+
     static takesString(String s) {
         Console.writeLine("Received #s")
     }
-    
+
     static doSomething(List list) {
         list.map({ "#_!!!" }).forEach(Console.writeLine)
     }
-    
+
     static getArea(Polygon p) -> Double {
         return p.calculateArea()
     }

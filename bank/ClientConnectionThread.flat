@@ -1,20 +1,20 @@
 package "bank"
 
-import "nova/thread/Thread"
-import "nova/network/ConnectionSocket"
+import "flatlang/thread/Thread"
+import "flatlang/network/ConnectionSocket"
 
 class ClientConnectionThread extends Thread {
     ConnectionSocket socket
-    
+
     public construct(ConnectionSocket socket) {
         this.socket = socket
     }
-    
+
     public run() {
         while (socket.validateConnection()) {
             Console.write(socket.in.readString())
         }
-        
+
         Console.writeLine("Disconnected.")
     }
 }

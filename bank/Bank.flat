@@ -1,12 +1,12 @@
 package "bank"
 
-import "nova/database/DBConnector"
-import "nova/database/ResultSet"
-import "nova/time/Date"
-import "nova/security/MD5"
-import "nova/network/ServerSocket"
-import "nova/network/ClientSocket"
-import "nova/network/ConnectionSocket"
+import "flatlang/database/DBConnector"
+import "flatlang/database/ResultSet"
+import "flatlang/time/Date"
+import "flatlang/security/MD5"
+import "flatlang/network/ServerSocket"
+import "flatlang/network/ClientSocket"
+import "flatlang/network/ConnectionSocket"
 
 class Bank {
     var DBConnector connection

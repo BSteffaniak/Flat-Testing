@@ -1,9 +1,9 @@
 package "stabilitytest"
 
-import "nova/network/ServerSocket"
-import "nova/network/ClientSocket"
-import "nova/network/ConnectionSocket"
-import "nova/thread/Thread"
+import "flatlang/network/ServerSocket"
+import "flatlang/network/ClientSocket"
+import "flatlang/network/ConnectionSocket"
+import "flatlang/thread/Thread"
 
 import "novex/nest/Nest"
 import "novex/nest/TestSuite"

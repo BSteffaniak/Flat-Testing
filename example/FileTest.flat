@@ -1,37 +1,37 @@
 package "example"
 
-import "nova/io/File"
-import "nova/io/FileReader"
-import "nova/io/FileWriter"
-import "nova/thread/Thread"
+import "flatlang/io/File"
+import "flatlang/io/FileReader"
+import "flatlang/io/FileWriter"
+import "flatlang/thread/Thread"
 
 class FileTest {
     public static main(String args[]) {
         File f = new File("C:/Users/Braden Steffaniak/test3.txt")
-        
+
         if (f.exists) {
             Console.writeLine("Your file exists!")
-            
+
             var writer = new FileWriter(f)
-            
+
             writer.writeLine("Entering data..")
             writer.writeLine("asdfasdf thing.")
-            
+
             writer.close()
-            
+
             var reader = new FileReader(f)
-            
+
             String data = reader.readAllContents()
-            
+
             reader.close()
-            
+
             Console.writeLine(data)
         } else {
             Console.writeLine("Your file does not exist..")
         }
-        
+
         Console.writeLine("Press enter to exit...")
-        
+
         Console.waitForEnter()
     }
 }

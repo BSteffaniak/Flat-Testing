@@ -1,7 +1,7 @@
 package "stabilitytest"
 
-import "nova/io/FancyOutputStream"
-import "nova/io/StringBuilder"
+import "flatlang/io/FancyOutputStream"
+import "flatlang/io/StringBuilder"
 
 import "novex/nest/Nest"
 import "novex/nest/TestSuite"
@@ -11,20 +11,20 @@ import static "novex/nest/Nest"
 testable class FancyOutputStreamTests {
     var FancyOutputStream stream
     var StringBuilder builder
-    
+
     init_test init() {
         builder = new StringBuilder()
         stream = new FancyOutputStream(builder)
     }
-    
+
     clean_test clean() {
         stream = null
         builder = null
     }
-    
+
     test oddHeader() {
         stream.writeHeader("Testing")
-        
+
         let string = builder.toString()
         let expected = "=================================== "
 
@@ -33,7 +33,7 @@ testable class FancyOutputStreamTests {
         expect(string.trim().count).toBe(80)
         expect(string.startsWith(expected)).toBe(true, "Header width not correct (#string.count chars)\n#expected\n#string")
     }
-    
+
     test evenHeader() {
         stream.writeHeader("Test")
 
@@ -45,7 +45,7 @@ testable class FancyOutputStreamTests {
         expect(string.trim().count).toBe(80)
         expect(string.startsWith(expected)).toBe(true, "Header width not correct (#string.count chars)\n#expected\n#string")
     }
-    
+
     test headerPattern() {
         stream.headerPattern = "/\\"
         stream.writeHeader("Test")

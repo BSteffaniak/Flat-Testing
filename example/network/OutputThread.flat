@@ -1,34 +1,34 @@
 package "example/network"
 
-import "nova/thread/Thread"
-import "nova/network/ConnectionSocket"
-import "nova/network/ServerSocket"
+import "flatlang/thread/Thread"
+import "flatlang/network/ConnectionSocket"
+import "flatlang/network/ServerSocket"
 
 class OutputThread extends Thread {
     ServerSocket     serverSocket
-    
+
     ConnectionSocket socket
-    
+
     public construct(ServerSocket serverSocket, ConnectionSocket socket) {
         this.serverSocket = serverSocket
-        
+
         this.socket = socket
     }
-    
+
     public run() {
         while (socket.connected) {
             String message = Console.readLine()
-            
+
             if (message == "q") {
                 serverSocket.close()
-                
+
                 break
             }
-            
+
             if (!socket.connected) {
                 break
             }
-            
+
             socket.out.write(message)
         }
     }
