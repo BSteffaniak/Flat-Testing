@@ -13,13 +13,13 @@ class ClientThread extends Thread {
     public construct(private Int port, private OutputStream out) {}
 
     public run() {
-        ClientSocket client = new ClientSocket()
-
         String ip = "127.0.0.1"
+
+        let client = new ClientSocket(ip, port)
 
         out.write("ClientSocket attempting to connect to #ip:#{port}... ")
 
-        expect(client.connect(ip, port)).toBe(true, "Failed to connect to localhost server")
+        expect(client.connect()).toNotBe(null, "Failed to connect to localhost server")
 
         out.writeLine("Success")
 
@@ -27,17 +27,17 @@ class ClientThread extends Thread {
 
         String s = client.connection.in.readString()
 
-        expect(s.count == NetworkStability.received.count && s == NetworkStability.received).toBe(true, "Client unable to receive the correct message from server")
+        expect(s.count == NetworkStability.RECEIVED.count && s == NetworkStability.RECEIVED).toBe(true, "Client unable to receive the correct message from server")
 
         out.write("Attempting to send String to ServerSocket... ")
 
-        client.connection.out.write(NetworkStability.received)
+        client.connection.out.write(NetworkStability.RECEIVED)
 
         out.writeLine("Success")
 
         out.write("Attempting to close ClientSocket... ")
 
-        expect(client.close()).toBe(true, "Unable to close Client connection")
+        expect(client.close()).toNotBe(null, "Unable to close Client connection")
 
         out.writeLine("Success")
     }
