@@ -1,0 +1,68 @@
+package "stabilitytest/syntax"
+
+import "flatlang/datastruct/list/Iterator"
+
+import "novex/nest/Nest"
+import "novex/nest/TestSuite"
+
+import static "novex/nest/Nest"
+
+testable class IfStatementStability {
+  [Test "Testing basic if statement with scope"]
+  testBasicIfStatementWithScope() {
+    var value = false
+
+    if (!value) {
+      value = true
+    }
+
+    expect(value).toBe(true, "Failed to get inside basic if statement with scope")
+  }
+
+  [Test "Testing basic single line if statement without scope"]
+  testBasicSingleLineIfStatementWithoutScope() {
+    var value = false
+
+    if (!value) value = true
+
+    expect(value).toBe(true, "Failed to get inside basic single line if statement without scope")
+  }
+
+  [Test "Testing basic continuation line if statement without scope"]
+  testBasicContinuationLineIfStatementWithoutScope() {
+    var value = false
+
+    if (!value)
+      value = true
+
+    expect(value).toBe(true, "Failed to get inside basic continuation line if statement without scope")
+  }
+
+  [Test "Testing basic multi-continuation line if statement without scope"]
+  testBasicMultiContinuationLineIfStatementWithoutScope() {
+    var value = false
+
+    if (!value)
+      value =
+      true
+
+    expect(value).toBe(true, "Failed to get inside basic multi-continuation line (first) if statement without scope")
+
+    value = false
+
+    if (!value)
+      value
+      = true
+
+    expect(value).toBe(true, "Failed to get inside basic multi-continuation line (second) if statement without scope")
+
+    value = false
+
+    if (!value)
+      value
+      =
+      true
+
+    expect(value).toBe(true, "Failed to get inside basic multi-continuation line (third) if statement without scope")
+  }
+}

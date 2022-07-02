@@ -1,0 +1,101 @@
+package "stabilitytest/syntax"
+
+import "flatlang/datastruct/list/Iterator"
+
+import "novex/nest/Nest"
+import "novex/nest/TestSuite"
+
+import static "novex/nest/Nest"
+
+testable class ElseStatementStability {
+  [Test "Testing basic else statement with scope"]
+  testBasicElseStatementWithScope() {
+    var value = false
+
+    if (value) {
+      fail("Got inside if instead of else")
+    } else {
+      value = true
+    }
+
+    expect(value).toBe(true, "Failed to get inside basic else statement with scope")
+  }
+
+  [Test "Testing basic single line else statement without scope"]
+  testBasicSingleLineElseStatementWithoutScope() {
+    var value = false
+
+    if (value) {
+      fail("Got inside if instead of else")
+    } else value = true
+
+    expect(value).toBe(true, "Failed to get inside basic continuation line else statement without scope")
+  }
+
+  [Test "Testing basic single line else statement without scope with single line if statement without scope"]
+  testBasicSingleLineElseStatementWithoutScopeWithSingleLineIfStatementWithoutScope() {
+    var value = false
+
+    if (value) fail("Got inside if instead of else")
+    else value = true
+
+    expect(value).toBe(true, "Failed to get inside basic continuation line else statement without scope with single line if statement without scope")
+  }
+
+  [Test "Testing basic single line else statement without scope with continuation line if statement without scope"]
+  testBasicSingleLineElseStatementWithoutScopeWithContinuationLineIfStatementWithoutScope() {
+    var value = false
+
+    if (value)
+      fail("Got inside if instead of else")
+    else value = true
+
+    expect(value).toBe(true, "Failed to get inside basic continuation line else statement without scope with continuation line if statement without scope")
+  }
+
+  [Test "Testing basic continuation line else statement without scope"]
+  testBasicContinuationLineElseStatementWithoutScope() {
+    var value = false
+
+    if (value) {
+      fail("Got inside if instead of else")
+    } else
+      value = true
+
+    expect(value).toBe(true, "Failed to get inside basic continuation line else statement without scope")
+  }
+
+  [Test "Testing basic multi-continuation line else statement without scope"]
+  testBasicMultiContinuationLineElseStatementWithoutScope() {
+    var value = false
+
+    if (value) {
+      fail("Got inside (first) if instead of else")
+    } else
+      value =
+      true
+
+    expect(value).toBe(true, "Failed to get inside basic multi-continuation line (first) else statement without scope")
+
+    value = false
+
+    if (value) {
+      fail("Got inside (second) if instead of else")
+    } else
+      value
+      = true
+
+    expect(value).toBe(true, "Failed to get inside basic multi-continuation line (second) else statement without scope")
+
+    value = false
+
+    if (value) {
+      fail("Got inside (third) if instead of else")
+    } else
+      value
+      =
+      true
+
+    expect(value).toBe(true, "Failed to get inside basic multi-continuation line (third) else statement without scope")
+  }
+}

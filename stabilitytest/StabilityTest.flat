@@ -14,6 +14,10 @@ import "novex/nest/ui/ResultWindow"
 import "novex/nest/ui/ResultBar"
 import "novex/nest/TestResult"
 
+import "stabilitytest/syntax/IfStatementStability"
+import "stabilitytest/syntax/ElseStatementStability"
+import "stabilitytest/syntax/ElseIfStatementStability"
+
 [TestSuite [
     ExceptionStability,
     SyntaxStability,
@@ -33,7 +37,10 @@ import "novex/nest/TestResult"
     BoundedIntervalStability,
     BoundlessIntervalStability,
     NetworkStability,
-    CastStability
+    CastStability,
+    IfStatementStability,
+    ElseStatementStability,
+    ElseIfStatementStability
 ]]
 [Target c]
 [TestSuite [
