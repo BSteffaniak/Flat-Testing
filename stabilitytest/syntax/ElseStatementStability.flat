@@ -8,8 +8,7 @@ import "novex/nest/TestSuite"
 import static "novex/nest/Nest"
 
 testable class ElseStatementStability {
-  [Test "Testing basic else statement with scope"]
-  testBasicElseStatementWithScope() {
+  test `basic else statement with scope`() {
     var value = false
 
     if (value) {
@@ -21,8 +20,7 @@ testable class ElseStatementStability {
     expect(value).toBe(true, "Failed to get inside basic else statement with scope")
   }
 
-  [Test "Testing basic single line else statement without scope"]
-  testBasicSingleLineElseStatementWithoutScope() {
+  test `basic single line else statement without scope`() {
     var value = false
 
     if (value) {
@@ -32,8 +30,7 @@ testable class ElseStatementStability {
     expect(value).toBe(true, "Failed to get inside basic continuation line else statement without scope")
   }
 
-  [Test "Testing basic single line else statement without scope with single line if statement without scope"]
-  testBasicSingleLineElseStatementWithoutScopeWithSingleLineIfStatementWithoutScope() {
+  test `basic single line else statement without scope with single line if statement without scope`() {
     var value = false
 
     if (value) fail("Got inside if instead of else")
@@ -42,8 +39,7 @@ testable class ElseStatementStability {
     expect(value).toBe(true, "Failed to get inside basic continuation line else statement without scope with single line if statement without scope")
   }
 
-  [Test "Testing basic single line else statement without scope with continuation line if statement without scope"]
-  testBasicSingleLineElseStatementWithoutScopeWithContinuationLineIfStatementWithoutScope() {
+  test `basic single line else statement without scope with continuation line if statement without scope`() {
     var value = false
 
     if (value)
@@ -53,8 +49,7 @@ testable class ElseStatementStability {
     expect(value).toBe(true, "Failed to get inside basic continuation line else statement without scope with continuation line if statement without scope")
   }
 
-  [Test "Testing basic continuation line else statement without scope"]
-  testBasicContinuationLineElseStatementWithoutScope() {
+  test `basic continuation line else statement without scope`() {
     var value = false
 
     if (value) {
@@ -65,8 +60,7 @@ testable class ElseStatementStability {
     expect(value).toBe(true, "Failed to get inside basic continuation line else statement without scope")
   }
 
-  [Test "Testing basic multi-continuation line else statement without scope"]
-  testBasicMultiContinuationLineElseStatementWithoutScope() {
+  test `basic multi-continuation line else statement without scope`() {
     var value = false
 
     if (value) {
