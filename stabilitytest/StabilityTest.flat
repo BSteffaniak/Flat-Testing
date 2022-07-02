@@ -17,6 +17,7 @@ import "novex/nest/TestResult"
 import "stabilitytest/syntax/IfStatementStability"
 import "stabilitytest/syntax/ElseStatementStability"
 import "stabilitytest/syntax/ElseIfStatementStability"
+import "stabilitytest/syntax/LiteralMethodNamesStability"
 
 [TestSuite [
     ExceptionStability,
@@ -40,7 +41,8 @@ import "stabilitytest/syntax/ElseIfStatementStability"
     CastStability,
     IfStatementStability,
     ElseStatementStability,
-    ElseIfStatementStability
+    ElseIfStatementStability,
+    LiteralMethodNamesStability
 ]]
 [Target c]
 [TestSuite [

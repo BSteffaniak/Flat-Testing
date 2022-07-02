@@ -1,0 +1,22 @@
+package "stabilitytest/syntax"
+
+import "flatlang/datastruct/list/Iterator"
+
+import "novex/nest/Nest"
+import "novex/nest/TestSuite"
+
+import static "novex/nest/Nest"
+
+testable class LiteralMethodNamesStability {
+  `my literal method`() => "hey"
+
+  test `call single literal method name`() {
+    let value = `my literal method`()
+
+    expect(value).toBe("hey")
+  }
+
+  test `call single literal method name as argument to function`() {
+    expect(`my literal method`()).toBe("hey")
+  }
+}
