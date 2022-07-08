@@ -224,18 +224,6 @@ testable class SyntaxStability {
         }*/
     }
 
-    [Test "Testing iterator functionality"]
-    testIteratorFunctionality() {
-        String[] list = ["this", "is", "a", "test", "to", "see", "what shows up"]
-        String[] list2 = list.filter(filterFunc)
-
-        Iterator<String> iter = list2.iterator
-
-        while (iter.hasNext) {
-            expect(iter.next.count >= 4).toBe(true, "Failed to run iterator")
-        }
-    }
-
     [Test "Testing foreach loop functionality"]
     testForeachLoopFunctionality() {
         String[] list = ["this", "is", "a", "test", "to", "see", "what shows up"]
