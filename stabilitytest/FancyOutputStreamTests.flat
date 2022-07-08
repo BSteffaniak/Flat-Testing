@@ -28,9 +28,9 @@ testable class FancyOutputStreamTests {
         let string = builder.toString()
         let expected = "=================================== "
 
-        expect(string.count).toBe(81)
+        expect(string.count).toBe(81, "Untrimmed value count expected to be 81, but was #string.count")
         expect(string.last).toBe('\n', "Expected new line at end of header, received '#string.last'")
-        expect(string.trim().count).toBe(80)
+        expect(string.trim().count).toBe(80, "Trimmed value count expected to be 80, but was #string.count")
         expect(string.startsWith(expected)).toBe(true, "Header width not correct (#string.count chars)\n#expected\n#string")
     }
 
@@ -40,9 +40,9 @@ testable class FancyOutputStreamTests {
         let string = builder.toString()
         let expected = "===================================== "
 
-        expect(string.count).toBe(81)
+        expect(string.count).toBe(81, "Untrimmed value count expected to be 81, but was #string.count")
         expect(string.last).toBe('\n', "Expected new line at end of header, received '#string.last'")
-        expect(string.trim().count).toBe(80)
+        expect(string.trim().count).toBe(80, "Trimmed value count expected to be 80, but was #string.count")
         expect(string.startsWith(expected)).toBe(true, "Header width not correct (#string.count chars)\n#expected\n#string")
     }
 
