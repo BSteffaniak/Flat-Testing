@@ -31,8 +31,6 @@ testable class NetworkStability {
 
         out.write("- accepting ClientSocket connection... ")
 
-        let responseDataAsync = server.on("data")
-
         let client = new ClientSocket("localhost", PORT)
 
         expect(await client.connect()).toBe(true, "Client failed to connect")
