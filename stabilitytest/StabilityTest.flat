@@ -71,7 +71,7 @@ class StabilityTest {
                 external js {
                     #{suiteResults} = [];
 
-                    var instance = #{System.jsCreateInstance(_)}
+                    var instance = #{System.jsCreateInstance(_)};
 
                     instance.runTests((r) => {
                         #{suiteResults}.push(r);
