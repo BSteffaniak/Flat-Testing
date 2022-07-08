@@ -17,7 +17,7 @@ testable class NetworkStability {
 
     [Test "Testing starting ServerSocket"]
     public async testStartServerSocket() {
-        let server = await new ServerSocket()
+        let server = new ServerSocket()
 
         expect(await server.start(PORT)).toBe(true, "Unable to start server")
         expect(server.close()).toBe(true, "Unable to close server")
