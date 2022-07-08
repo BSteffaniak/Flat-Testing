@@ -89,4 +89,10 @@ testable class PrimitiveOverloadStability {
         expect(counter).toBe(3, "Failed to iterator over map values. Expected counter value of 2, but got #counter")
         expect(sum).toBe(49 + 6 - 22, "Failed to get valid key values. Expected a sum of #{49 + 6 - 22}, but got #sum")
     }
+
+    test `primitive facade functionality`() {
+        let str = 'a'.toString()
+
+        expect(str).toBe("a")
+    }
 }
