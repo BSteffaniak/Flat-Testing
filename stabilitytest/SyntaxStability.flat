@@ -417,8 +417,7 @@ testable class SyntaxStability {
 
     callMeWithNode(Node n) => expect(n.value == 91).toBe(true, "Failed to call method with correct safely navigated node")
 
-    [Test "Testing snake case numbers"]
-    testSnakeCaseNumbers() {
+    test `snake case numbers`() {
     	Double dPos =  51_325_753.131313
     	Double dNeg = -51_325_753.131313
 
@@ -432,8 +431,7 @@ testable class SyntaxStability {
     	expect(lNeg == -922547211).toBe(true, "Negative snake case long failed to parse")
     }
 
-    [Test "Testing array initializers"]
-    testArrayInitializers() {
+    test `array initializers`() {
     	Int num1 = 1
     	Int num2 = 2
 
@@ -442,8 +440,7 @@ testable class SyntaxStability {
     	expect(myInts[2] == num1 && myInts[3] == num2).toBe(true)
     }
 
-    [Test "Testing chain operator"]
-    testChainOperator() {
+    test `chain operator`() {
     	var myInts = [1, 2, 3, 4]
     	var sum = 0
 
