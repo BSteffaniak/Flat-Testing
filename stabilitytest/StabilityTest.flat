@@ -19,6 +19,7 @@ import "stabilitytest/syntax/ElseStatementStability"
 import "stabilitytest/syntax/ElseIfStatementStability"
 import "stabilitytest/syntax/LiteralMethodNamesStability"
 import "stabilitytest/syntax/LiteralFieldNamesStability"
+import "stabilitytest/syntax/UnaryOperatorStability"
 import "stabilitytest/syntax/IteratorStability"
 
 [TestSuite [
@@ -46,6 +47,7 @@ import "stabilitytest/syntax/IteratorStability"
     ElseIfStatementStability,
     LiteralMethodNamesStability,
     LiteralFieldNamesStability,
+    UnaryOperatorStability,
     IteratorStability
 ]]
 [Target c]
