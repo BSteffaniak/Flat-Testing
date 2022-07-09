@@ -53,11 +53,39 @@ jobs:
         repository: FlatLang/Nest
         path: Nest
 
+    - name: Checkout Compiler-String-Extensions library
+      uses: actions/checkout@master
+      with:
+        repository: FlatLang/Compiler-String-Extensions
+        path: Compiler-String-Extensions
+
+    - name: Checkout Network library
+      uses: actions/checkout@master
+      with:
+        repository: FlatLang/Network
+        path: Network
+
+    - name: Checkout MySQL library
+      uses: actions/checkout@master
+      with:
+        repository: FlatLang/MySQL
+        path: MySQL
+
+    - name: Checkout Redis library
+      uses: actions/checkout@master
+      with:
+        repository: FlatLang/Redis
+        path: Redis
+
     - name: Build Stability Test
       run: |
         java -jar Flat/target/flatc.jar \
           example stabilitytest \
           -l Nest \
+          -l Compiler-String-Extensions \
+          -l Network \
+          -l MySQL \
+          -l Redis \
           -install-dir . \
           -main stabilitytest/StabilityTest \
           -o example/bin/ExecutableJS \
