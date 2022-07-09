@@ -103,7 +103,7 @@ jobs:
 
     - name: Build Stability Test with Airship
       env:
-        FLAT_HOME: ..
+        FLAT_HOME: $HOME
       working-directory: Stability-Test
       run: |
         node ../airship.js install
