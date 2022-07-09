@@ -94,7 +94,7 @@ jobs:
       with:
         repo: 'FlatLang/Airship'
         version: 'tags/v0.1.0-alpha'
-        file: 'index.js'
+        file: 'airship.js'
         target: 'airship.js'
 
     - uses: actions/setup-node@v3
