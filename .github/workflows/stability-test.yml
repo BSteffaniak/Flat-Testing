@@ -108,6 +108,11 @@ jobs:
       run: |
         node ../airship.js install
 
+    - name: Run Stability Test built from Airship
+      working-directory: Stability-Test
+      run: |
+        node dist/index.js
+
     - name: Build Stability Test
       run: |
         java -jar Flat/target/flatc.jar \
