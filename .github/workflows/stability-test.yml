@@ -83,10 +83,16 @@ jobs:
         repository: FlatLang/Svg
         path: Svg
 
+    - name: Checkout Stability-Test library
+      uses: actions/checkout@master
+      with:
+        repository: FlatLang/Stability-Test
+        path: Stability-Test
+
     - name: Build Stability Test
       run: |
         java -jar Flat/target/flatc.jar \
-          example stabilitytest \
+          example Stability-Test/src \
           -l Nest \
           -l Compiler-String-Extensions \
           -l Network \
