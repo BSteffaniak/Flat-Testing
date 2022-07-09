@@ -102,6 +102,8 @@ jobs:
         node-version: 14
 
     - name: Build Stability Test with Airship
+      env:
+        FLAT_HOME: ~
       working-directory: Stability-Test
       run: |
         node ../airship.js install
