@@ -95,6 +95,16 @@ jobs:
         repo: 'FlatLang/Airship'
         version: 'tags/v0.1.0-alpha'
         file: 'index.js'
+        target: 'airship.js'
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 14
+
+    - name: Build Stability Test with Airship
+      working-directory: Stability-Test
+      run: |
+        node ../airship.js install
 
     - name: Build Stability Test
       run: |
