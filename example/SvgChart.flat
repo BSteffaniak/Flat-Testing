@@ -1,6 +1,6 @@
 package "example"
 
-import "flatlang/web/svg/no3/No3"
+import "flatlang/svg/no3/No3"
 import "flatlang/io/File"
 import "flatlang/time/Timer"
 

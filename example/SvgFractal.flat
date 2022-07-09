@@ -1,8 +1,8 @@
 package "example"
 
-import "flatlang/web/svg/Svg";
-import "flatlang/web/svg/SvgCircle";
-import "flatlang/web/svg/SvgComponentList"
+import "flatlang/svg/Svg";
+import "flatlang/svg/SvgCircle";
+import "flatlang/svg/SvgComponentList"
 import "flatlang/io/File"
 import "flatlang/io/FileReader"
 import "flatlang/io/FileWriter"
@@ -68,7 +68,7 @@ class SvgFractal {
             }
         }
 
-        File f = new File("C:/Users/Braden/svgoutput.html")
+        File f = new File("svgoutput.html")
 
         var writer = new FileWriter(f)
 

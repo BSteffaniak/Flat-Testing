@@ -1,7 +1,7 @@
 package "example/database"
 
-import "flatlang/database/DBConnector"
-import "flatlang/database/ResultSet"
+import "flatlang/mysql/DBConnector"
+import "flatlang/mysql/ResultSet"
 
 class DatabaseDemo {
     public static main(String args[]) {

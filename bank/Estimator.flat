@@ -1,6 +1,6 @@
 package "bank"
 
-import "flatlang/database/ResultSet"
+import "flatlang/mysql/ResultSet"
 
 class Estimator {
     public static getMonthlyProfit(ResultSet set) -> Double {
