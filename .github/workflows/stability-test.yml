@@ -93,7 +93,6 @@ jobs:
       uses: dsaltares/fetch-gh-release-asset@master
       with:
         repo: 'FlatLang/Airship'
-        version: 'tags/v0.1.0-alpha'
         file: 'airship.js'
         target: 'airship.js'
 
