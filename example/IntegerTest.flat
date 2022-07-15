@@ -4,7 +4,6 @@ import "flatlang/time/Timer"
 import "flatlang/thread/Thread"
 import "flatlang/datastruct/list/LinkedList"
 import "flatlang/datastruct/list/ListNode"
-import "flatlang/gc/GC"
 
 class IntegerTest {
     public static main(String args[]) {

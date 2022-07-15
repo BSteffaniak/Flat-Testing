@@ -16,7 +16,6 @@ import "flatlang/datastruct/list/Iterator"
 import "flatlang/datastruct/list/LinkedList"
 import "flatlang/datastruct/list/List"
 import "flatlang/io/Curl"
-import "flatlang/meta/Library"
 import "flatlang/thread/Thread"
 import "flatlang/thread/ThreadLocal"
 import "flatlang/time/Timer"
@@ -100,17 +99,17 @@ class Lab {
         local = 10
         Console.log("Main local set: #local")
 
-        Async.execute({
-            Console.log("Async local unset: #local")
-            local = 5
-            Console.log("Async local set: #local")
+        // Async.execute({
+        //     Console.log("Async local unset: #local")
+        //     local = 5
+        //     Console.log("Async local set: #local")
 
-            Console.writeLine("Wait a second!")
-            Thread.sleep(1000)
-            Console.writeLine("ok, now what")
+        //     Console.writeLine("Wait a second!")
+        //     Thread.sleep(1000)
+        //     Console.writeLine("ok, now what")
 
-            Console.log("Async local at end: #local")
-        })
+        //     Console.log("Async local at end: #local")
+        // })
 
         var sss = new String[4][2][1]
 
