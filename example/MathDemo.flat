@@ -19,7 +19,7 @@ class MathDemo {
             }
         }
 
-        Timer.stop()
+        timer.stop()
 
         Console.writeLine(iterations + " iterations of Math.sin() in " + timer.duration + "ms")
 
