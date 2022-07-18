@@ -12,7 +12,7 @@ class ThreadDemoImplementation extends Thread {
         this.word   = word
     }
 
-    public run() {
+    public async run() {
         for (i in 0..10) {
             Console.writeLine(word)
 
