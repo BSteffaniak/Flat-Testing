@@ -11,7 +11,6 @@ import "flatlang/network/ServerSocket"
 import "flatlang/math/NumericStatement"
 import "flatlang/datastruct/BinaryTree"
 import "flatlang/datastruct/list/Array"
-import "flatlang/datastruct/list/IntArray"
 import "flatlang/datastruct/list/Iterator"
 import "flatlang/datastruct/list/LinkedList"
 import "flatlang/datastruct/list/List"
@@ -226,7 +225,7 @@ class Lab {
 
         l.chainable().chainable()
 
-        immutable String[] myImmutableArray = ["one", "two", "three"]
+        String[] myImmutableArray = ["one", "two", "three"]
 
         Console.log("Immutable: #myImmutableArray")
 
