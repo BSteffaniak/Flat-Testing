@@ -14,125 +14,50 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Checkout Flat CLI
-      uses: actions/checkout@master
-      with:
-        repository: FlatLang/Flat
-        path: Flat
-
-    - name: Checkout Flat JS Writer
-      uses: actions/checkout@master
-      with:
-        repository: FlatLang/Flat-js
-        path: Flat-JS
-
-    - name: Set up JDK 11
-      uses: actions/setup-java@v3
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-        cache: maven
-
-    - name: Build CLI
-      run: |
-        mvn -f Flat install
-
-    - name: Build JS Writer
-      run: |
-        mvn -f Flat-JS install
-
-    - name: Checkout Standard library
-      uses: actions/checkout@master
-      with:
-        repository: FlatLang/Standard-Library
-        path: Standard-Library
-
-    - name: Checkout Nest library
-      uses: actions/checkout@master
-      with:
-        repository: FlatLang/Nest
-        path: Nest
-
-    - name: Checkout Compiler-String-Extensions library
-      uses: actions/checkout@master
-      with:
-        repository: FlatLang/Compiler-String-Extensions
-        path: Compiler-String-Extensions
-
-    - name: Checkout Network library
-      uses: actions/checkout@master
-      with:
-        repository: FlatLang/Network
-        path: Network
-
-    - name: Checkout MySQL library
-      uses: actions/checkout@master
-      with:
-        repository: FlatLang/MySQL
-        path: MySQL
-
-    - name: Checkout Redis library
-      uses: actions/checkout@master
-      with:
-        repository: FlatLang/Redis
-        path: Redis
-
-    - name: Checkout Svg library
-      uses: actions/checkout@master
-      with:
-        repository: FlatLang/Svg
-        path: Svg
-
-    - name: Checkout Stability-Test library
+    - name: Checkout Stability-Test
       uses: actions/checkout@master
       with:
         repository: FlatLang/Stability-Test
         path: Stability-Test
 
-    - name: Download Airship
+    - name: Download latest Airship
       uses: dsaltares/fetch-gh-release-asset@master
       with:
-        repo: 'FlatLang/Airship'
-        file: 'airship.js'
-        target: 'airship.js'
+        repo: FlatLang/Airship
+        file: airship.js
 
     - uses: actions/setup-node@v3
       with:
         node-version: 14
 
-    - name: Build Stability Test with Airship
-      env:
-        FLAT_HOME: ..
-      working-directory: Stability-Test
-      run: |
-        node ../airship.js install
+    - name: Set up Maven
+      uses: stCarolas/setup-maven@v4.4
+      with:
+        maven-version: 3.8.2
 
-    - name: Run Stability Test built from Airship
-      working-directory: Stability-Test
-      run: |
-        node dist/index.js
+    - name: Cache Maven dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.m2/repository
+        key: ${{ runner.os }}-build-${{ env.cache-name }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
 
     - name: Build Stability Test
+      working-directory: Stability-Test
       run: |
-        java -jar Flat/target/flatc.jar \
-          example Stability-Test/src \
-          -l Nest \
-          -l Compiler-String-Extensions \
-          -l Network \
-          -l MySQL \
-          -l Redis \
-          -l Svg \
-          -install-dir . \
-          -main stabilitytest/StabilityTest \
-          -o example/bin/ExecutableJS \
-          -target js
+        node ../airship.js install test
 
     - uses: actions/upload-artifact@v3
       if: failure()
       with:
-        name: ExecutableJS.js
-        path: example/bin/ExecutableJS.js
+        name: test.js
+        path: Stability-Test/dist/test.js
 
     - name: Run Stability Test
+      working-directory: Stability-Test
       run: |
-        node example/bin/ExecutableJS.js
+        node ../airship.js run test
