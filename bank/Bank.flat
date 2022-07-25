@@ -38,7 +38,7 @@ class Bank {
         connection = new DBConnector()
     }
 
-    static listenClients() {
+    static async listenClients() {
         ServerSocket socket = new ServerSocket()
 
         Int port = 5675

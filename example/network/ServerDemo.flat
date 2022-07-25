@@ -4,7 +4,7 @@ import "flatlang/network/ServerSocket"
 import "flatlang/network/ConnectionSocket"
 
 class ServerDemo {
-    public static main(String[] args) {
+    public static async main(String[] args) {
         ConnectionSocket[] connections = new Array()
 
         ServerSocket socket = new ServerSocket()
