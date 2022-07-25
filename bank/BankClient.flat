@@ -5,7 +5,7 @@ import "flatlang/security/MD5"
 import "flatlang/thread/Thread"
 
 class BankClient {
-    public static main(String[] args) {
+    public static async main(String[] args) {
         String[] ips  = [ "192.168.1.139", "192.168.1.101", "10.0.53.54", "127.0.0.1" ]
         Int      port = 5675
 

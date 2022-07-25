@@ -4,7 +4,7 @@ import "flatlang/network/ClientSocket"
 import "flatlang/network/ConnectionSocket"
 
 class ClientDemo {
-    public static main(String[] args) {
+    public static async main(String[] args) {
         String ip = "127.0.0.1"
         Int port = 5675
 
