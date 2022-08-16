@@ -7,19 +7,19 @@ import "flatlang/thread/Thread"
 
 class FileTest {
     public static main(String args[]) {
-        File f = new File("C:/Users/Braden Steffaniak/test3.txt")
+        File f = File("C:/Users/Braden Steffaniak/test3.txt")
 
         if (f.exists) {
             Console.writeLine("Your file exists!")
 
-            var writer = new FileWriter(f)
+            var writer = FileWriter(f)
 
             writer.writeLine("Entering data..")
             writer.writeLine("asdfasdf thing.")
 
             writer.close()
 
-            var reader = new FileReader(f)
+            var reader = FileReader(f)
 
             String data = reader.readAllContents()
 

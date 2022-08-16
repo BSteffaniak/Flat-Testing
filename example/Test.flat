@@ -4,7 +4,7 @@ import "flatlang/datastruct/list/Stack"
 
 class Test {
     public static main(String[] args) {
-        Stack<String> s = new Stack()
+        Stack<String> s = Stack()
 
         s.push("How are you?")
         s.push("Larry")

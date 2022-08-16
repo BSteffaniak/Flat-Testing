@@ -5,7 +5,7 @@ import "flatlang/datastruct/HashMap"
 
 class GenericDemo {
     public static main(String args[]) {
-        Stack<String> strs = new Stack()
+        Stack<String> strs = Stack()
 
         Console.writeLine("Pushing \"test\"")
         strs.push("test")
@@ -24,7 +24,7 @@ class GenericDemo {
 
         // Uncomment the next two lines to demonstrate the type
         // checking of generic methods.
-//        Object o = new Object()
+//        Object o = Object()
 //        strs.push(o)
 
         while (!strs.isEmpty) {

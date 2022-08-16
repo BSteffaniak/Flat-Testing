@@ -6,7 +6,7 @@ import "flatlang/operators/EqualsOperator"
 
 class HashMapDemo {
     public static main(String args[]) {
-        HashMap<String, String> words = new HashMap()
+        HashMap<String, String> words = HashMap()
 
         words["test"] = "is test"
         words["test2"] = "is test2"

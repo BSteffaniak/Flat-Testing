@@ -13,7 +13,7 @@ class Bank {
 
     ConnectionSocket socket
 
-    public static main(String args[]) {
+    public static async main(String args[]) {
         listenClients()
     }
 
@@ -35,11 +35,11 @@ class Bank {
     }
 
     init() {
-        connection = new DBConnector()
+        connection = DBConnector()
     }
 
     static async listenClients() {
-        ServerSocket socket = new ServerSocket()
+        ServerSocket socket = ServerSocket()
 
         Int port = 5675
 
@@ -49,7 +49,7 @@ class Bank {
             Console.writeLine("Started bank server on port " + port)
             Console.writeLine("Waiting for clients...")
 
-            ServerOutputThread thread = new ServerOutputThread(socket)
+            ServerOutputThread thread = ServerOutputThread(socket)
             thread.start()
 
             while (true) {
@@ -99,7 +99,7 @@ class Bank {
                 outputData("  (3) Record a withdrawal.\n")
                 outputData("  (4) Record a deposit.\n")
 
-                Date d = new Date()
+                Date d = Date()
                 String date = d.formatDate("%d/%02d/%02d %02d:%02d:%02d", d.year, d.month, d.day, d.hour, d.minute, d.second)
 
                 var input = getInput()
@@ -223,7 +223,7 @@ class Bank {
         ResultSet result = connection.query("SELECT balance FROM register ORDER BY date DESC LIMIT 1;")
 
         if (connection.error.count > 0) {
-            throw new BankQueryException(connection.error)
+            throw BankQueryException(connection.error)
         }
 
         var Double balance = 0
@@ -251,7 +251,7 @@ class Bank {
         connection.query("INSERT INTO register VALUES('" + date + "', '" + item + "', '" + desc + "', '" + deposited + "', " + amount + ", " + balance + ");")
 
         if (connection.error.count > 0) {
-            throw new BankQueryException(connection.error)
+            throw BankQueryException(connection.error)
         }
     }
 }

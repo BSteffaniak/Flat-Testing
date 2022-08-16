@@ -10,7 +10,7 @@ class IntegerTest {
         var c = 'y'
 
         while (c == 'y' || c == 'Y') {
-            Timer timer = new Timer().start()
+            Timer timer = Timer().start()
 
             for (i in 0..999_999) {
                 Long.toString(i)

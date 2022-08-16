@@ -21,9 +21,9 @@ class ServerOutputThread extends Thread {
         while (request && socket.open) {
             Console.writeLine("Accepted new client")
 
-            Bank bank = new Bank(request)
+            Bank bank = Bank(request)
 
-            ConnectionThread thread = new ConnectionThread(bank, request)
+            ConnectionThread thread = ConnectionThread(bank, request)
 
             thread.start()
 

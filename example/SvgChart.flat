@@ -6,7 +6,7 @@ import "flatlang/time/Timer"
 
 class SvgChart {
     public static main(String[] args) {
-        Timer timer = new Timer().start()
+        Timer timer = Timer().start()
 
         var selection = No3.select("body")
 

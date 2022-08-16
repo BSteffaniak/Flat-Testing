@@ -8,12 +8,12 @@ class ClientDemo {
         String ip = "127.0.0.1"
         Int port = 5675
 
-        let socket = new ClientSocket(ip, port)
+        let socket = ClientSocket(ip, port)
 
         Console.writeLine("Attempting to connect to " + ip + ":" + port)
 
         if (socket.connect()) {
-            ConnectionThread thread = new ConnectionThread(socket.connection)
+            ConnectionThread thread = ConnectionThread(socket.connection)
 
             thread.start()
 

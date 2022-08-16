@@ -31,7 +31,7 @@ class DatabaseDemo {
     static connect() -> DBConnector {
         Console.writeLine("Connecting...")
 
-        DBConnector connection = new DBConnector()
+        DBConnector connection = DBConnector()
 
         connection.connect("localhost", "root", "server", "test")
 

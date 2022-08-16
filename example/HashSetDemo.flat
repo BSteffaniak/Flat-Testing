@@ -5,7 +5,7 @@ import "flatlang/time/Timer"
 
 class HashSetDemo {
     public static main(String[] args) {
-        var set = new HashSet<String>()
+        var set = HashSet<String>()
 
         set.add("TEseting")
 
@@ -14,12 +14,12 @@ class HashSetDemo {
         Console.writeLine("Contains TEseting? #{set.contains("TEseting")}")
         Console.writeLine(set)
 
-        //set = new HashSet()
+        //set = HashSet()
 
         Console.writeLine("Benchmarking")
 
         var count = 50000
-        var timer = new Timer().start()
+        var timer = Timer().start()
 
         for (i in 0..count) {
             "my string#i"

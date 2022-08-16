@@ -14,12 +14,12 @@ class BankClient {
 
             Console.writeLine("Attempting connection on IP: " + ip)
 
-            let socket = new ClientSocket(ip, port)
+            let socket = ClientSocket(ip, port)
 
             if (socket.connect()) {
                 Console.writeLine("Connected!")
 
-                ClientConnectionThread thread = new ClientConnectionThread(socket.connection)
+                ClientConnectionThread thread = ClientConnectionThread(socket.connection)
 
                 var String input = null
 

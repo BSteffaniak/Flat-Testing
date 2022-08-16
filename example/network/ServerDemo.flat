@@ -5,9 +5,9 @@ import "flatlang/network/ConnectionSocket"
 
 class ServerDemo {
     public static async main(String[] args) {
-        ConnectionSocket[] connections = new Array()
+        ConnectionSocket[] connections = Array()
 
-        ServerSocket socket = new ServerSocket()
+        ServerSocket socket = ServerSocket()
 
         Int port = 25560
 
@@ -26,11 +26,11 @@ class ServerDemo {
             while (request) {
                 connections.add(request)
 
-                ConnectionThread thread = new ConnectionThread(request)
+                ConnectionThread thread = ConnectionThread(request)
 
                 thread.start()
 
-                OutputThread othread = new OutputThread(socket, request)
+                OutputThread othread = OutputThread(socket, request)
 
                 othread.start()
                 Console.writeLine("Waiting on another")
