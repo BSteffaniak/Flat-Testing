@@ -1,8 +1,8 @@
-package "example"
+package example
 
-import "flatlang/svg/no3/No3"
-import "flatlang/io/File"
-import "flatlang/time/Timer"
+import flatlang/svg/no3/No3
+import flatlang/io/File
+import flatlang/time/Timer
 
 class SvgChart {
     public static main(String[] args) {

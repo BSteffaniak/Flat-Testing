@@ -1,4 +1,4 @@
-package "example"
+package example
 
 class PolymorphismDemo {
     public static main(String args[]) {

@@ -1,8 +1,8 @@
-package "bank"
+package bank
 
-import "flatlang/thread/Thread"
-import "flatlang/network/ConnectionSocket"
-import "flatlang/security/MD5"
+import flatlang/thread/Thread
+import flatlang/network/ConnectionSocket
+import flatlang/security/MD5
 
 class ClientInputThread extends Thread {
     ConnectionSocket socket

@@ -1,5 +1,5 @@
-package "example"
+package example
 
 class NonWholeDivisionException extends Exception {
-    
+
 }

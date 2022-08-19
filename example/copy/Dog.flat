@@ -1,4 +1,4 @@
-package "example/copy"
+package example/copy
 
 class Dog {
     public construct(Int a, Int b) {

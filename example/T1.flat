@@ -1,4 +1,4 @@
-package "example"
+package example
 
 class T1 {
     visible static Int ind {

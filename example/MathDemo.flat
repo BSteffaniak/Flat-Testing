@@ -1,6 +1,6 @@
-package "example"
+package example
 
-import "flatlang/time/Timer"
+import flatlang/time/Timer
 
 class MathDemo {
     public static main(String args[]) {

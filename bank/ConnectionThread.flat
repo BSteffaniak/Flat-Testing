@@ -1,8 +1,8 @@
-package "bank"
+package bank
 
-import "flatlang/thread/Thread"
-import "flatlang/network/ConnectionSocket"
-import "flatlang/network/ServerSocket"
+import flatlang/thread/Thread
+import flatlang/network/ConnectionSocket
+import flatlang/network/ServerSocket
 
 class ConnectionThread extends Thread {
     ConnectionSocket socket

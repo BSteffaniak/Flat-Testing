@@ -1,4 +1,4 @@
-package "example"
+package example
 
 public trait Polygon {
     public numberSides() -> Int

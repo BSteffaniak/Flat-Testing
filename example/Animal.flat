@@ -1,18 +1,18 @@
-package "example"
+package example
 
 class Animal {
     public getNumLegs() -> Int {
         return 0
     }
-    
+
     public getNumEyes() -> Int {
         return 0
     }
-    
+
     public getDescription() -> String {
         return "Its just a stupid animal..."
     }
-    
+
     public toString() -> String {
         return getDescription()
     }

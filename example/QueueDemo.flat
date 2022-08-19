@@ -1,6 +1,6 @@
-package "example"
+package example
 
-import "flatlang/datastruct/list/Queue"
+import flatlang/datastruct/list/Queue
 
 class QueueDemo {
     public static main(String[] args) {

@@ -1,6 +1,6 @@
-package "example"
+package example
 
-import "flatlang/thread/Thread"
+import flatlang/thread/Thread
 
 class ThreadDemoImplementation extends Thread {
     Long    millis

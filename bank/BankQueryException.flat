@@ -1,4 +1,4 @@
-package "bank"
+package bank
 
 class BankQueryException extends Exception {
     public construct(String message) {

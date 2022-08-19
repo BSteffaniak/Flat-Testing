@@ -1,12 +1,12 @@
-package "example"
+package example
 
-import "flatlang/svg/Svg";
-import "flatlang/svg/SvgCircle";
-import "flatlang/svg/SvgComponentList"
-import "flatlang/io/File"
-import "flatlang/io/FileReader"
-import "flatlang/io/FileWriter"
-import "flatlang/time/Timer"
+import flatlang/svg/Svg;
+import flatlang/svg/SvgCircle;
+import flatlang/svg/SvgComponentList
+import flatlang/io/File
+import flatlang/io/FileReader
+import flatlang/io/FileWriter
+import flatlang/time/Timer
 
 class SvgFractal {
     public static main(String[] args) {

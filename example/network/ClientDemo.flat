@@ -1,7 +1,7 @@
-package "example/network"
+package example/network
 
-import "flatlang/network/ClientSocket"
-import "flatlang/network/ConnectionSocket"
+import flatlang/network/ClientSocket
+import flatlang/network/ConnectionSocket
 
 class ClientDemo {
     public static async main(String[] args) {

@@ -1,9 +1,9 @@
-package "example"
+package example
 
-import "flatlang/time/Timer"
-import "flatlang/thread/Thread"
-import "flatlang/datastruct/list/LinkedList"
-import "flatlang/datastruct/list/ListNode"
+import flatlang/time/Timer
+import flatlang/thread/Thread
+import flatlang/datastruct/list/LinkedList
+import flatlang/datastruct/list/ListNode
 
 class IntegerTest {
     public static main(String args[]) {

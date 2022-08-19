@@ -1,8 +1,8 @@
-package "bank"
+package bank
 
-import "flatlang/network/ClientSocket"
-import "flatlang/security/MD5"
-import "flatlang/thread/Thread"
+import flatlang/network/ClientSocket
+import flatlang/security/MD5
+import flatlang/thread/Thread
 
 class BankClient {
     public static async main(String[] args) {
