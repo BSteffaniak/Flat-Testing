@@ -3,8 +3,6 @@ package example
 import novex/nest/Nest
 import novex/nest/TestSuite
 
-import static novex/nest/Nest
-
 testable class NestTest {
     public static async main(String[] args) {
         let test = NestTest()
