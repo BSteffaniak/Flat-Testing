@@ -1,23 +1,23 @@
 // Testing single line comment on first line.
 package example
 
-import flatlang/math/logic/WFF
-import flatlang/math/logic/InvalidFormulaException
-import flatlang/math/logic/StatementLetter
-import flatlang/datastruct/HashMap
-import flatlang/math/Vector3D
-import flatlang/math/Matrix
-import flatlang/network/ServerSocket
-import flatlang/math/NumericStatement
-import flatlang/datastruct/BinaryTree
-import flatlang/datastruct/list/Array
-import flatlang/datastruct/list/Iterator
-import flatlang/datastruct/list/LinkedList
-import flatlang/datastruct/list/List
-import flatlang/io/Curl
-import flatlang/thread/Thread
-import flatlang/thread/ThreadLocal
-import flatlang/time/Timer
+import flat/math/logic/WFF
+import flat/math/logic/InvalidFormulaException
+import flat/math/logic/StatementLetter
+import flat/datastruct/HashMap
+import flat/math/Vector3D
+import flat/math/Matrix
+import flat/network/ServerSocket
+import flat/math/NumericStatement
+import flat/datastruct/BinaryTree
+import flat/datastruct/list/Array
+import flat/datastruct/list/Iterator
+import flat/datastruct/list/LinkedList
+import flat/datastruct/list/List
+import flat/io/Curl
+import flat/thread/Thread
+import flat/thread/ThreadLocal
+import flat/time/Timer
 
 class Lab {
     static thread_local var Int local = 122

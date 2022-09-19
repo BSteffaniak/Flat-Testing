@@ -1,8 +1,8 @@
 package example
 
-import flatlang/datastruct/HashMap
-import flatlang/datastruct/Pair
-import flatlang/operators/EqualsOperator
+import flat/datastruct/HashMap
+import flat/datastruct/Pair
+import flat/operators/EqualsOperator
 
 class HashMapDemo {
     public static main(String args[]) {

@@ -1,7 +1,7 @@
 package example/network
 
-import flatlang/thread/Thread
-import flatlang/network/ConnectionSocket
+import flat/thread/Thread
+import flat/network/ConnectionSocket
 
 class ConnectionThread extends Thread {
     ConnectionSocket socket

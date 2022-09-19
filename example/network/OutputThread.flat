@@ -1,8 +1,8 @@
 package example/network
 
-import flatlang/thread/Thread
-import flatlang/network/ConnectionSocket
-import flatlang/network/ServerSocket
+import flat/thread/Thread
+import flat/network/ConnectionSocket
+import flat/network/ServerSocket
 
 class OutputThread extends Thread {
     ServerSocket     serverSocket

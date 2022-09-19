@@ -1,12 +1,12 @@
 package bank
 
-import flatlang/mysql/DBConnector
-import flatlang/mysql/ResultSet
-import flatlang/time/Date
-import flatlang/security/MD5
-import flatlang/network/ServerSocket
-import flatlang/network/ClientSocket
-import flatlang/network/ConnectionSocket
+import flat/mysql/DBConnector
+import flat/mysql/ResultSet
+import flat/time/Date
+import flat/security/MD5
+import flat/network/ServerSocket
+import flat/network/ClientSocket
+import flat/network/ConnectionSocket
 
 class Bank {
     var DBConnector connection

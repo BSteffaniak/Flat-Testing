@@ -1,7 +1,7 @@
 package example
 
-import flatlang/datastruct/HashSet
-import flatlang/time/Timer
+import flat/datastruct/HashSet
+import flat/time/Timer
 
 class HashSetDemo {
     public static main(String[] args) {

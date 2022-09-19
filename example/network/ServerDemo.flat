@@ -1,7 +1,7 @@
 package example/network
 
-import flatlang/network/ServerSocket
-import flatlang/network/ConnectionSocket
+import flat/network/ServerSocket
+import flat/network/ConnectionSocket
 
 class ServerDemo {
     public static async main(String[] args) {

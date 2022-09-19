@@ -1,8 +1,8 @@
 package bank
 
-import flatlang/thread/Thread
-import flatlang/network/ServerSocket
-import flatlang/network/ConnectionSocket
+import flat/thread/Thread
+import flat/network/ServerSocket
+import flat/network/ConnectionSocket
 
 class ServerOutputThread extends Thread {
     ServerSocket socket

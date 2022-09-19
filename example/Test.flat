@@ -1,6 +1,6 @@
 package example
 
-import flatlang/datastruct/list/Stack
+import flat/datastruct/list/Stack
 
 class Test {
     public static main(String[] args) {

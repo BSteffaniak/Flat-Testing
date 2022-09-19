@@ -1,9 +1,9 @@
 package example
 
-import flatlang/io/File
-import flatlang/io/FileReader
-import flatlang/io/FileWriter
-import flatlang/thread/Thread
+import flat/io/File
+import flat/io/FileReader
+import flat/io/FileWriter
+import flat/thread/Thread
 
 class FileTest {
     public static main(String args[]) {
