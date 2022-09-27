@@ -82,7 +82,7 @@ class Lab {
 
         Console.log("List2 #list2")
 
-        list2.add(9).add(2)
+        list2:add(9).add(2)
 
         Console.log(list.map({ "'#_'" }).toEnglish("and"))
         Console.log(list.map({ "'#_'" }).toEnglish("and", false))
