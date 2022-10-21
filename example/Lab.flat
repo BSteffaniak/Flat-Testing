@@ -54,11 +54,11 @@ class Lab {
 
         Console.writeLine("My nums: #num1, #num2 hey: #tree.inorder()!")
 
-        Console.log("MergeSorted array: #strData.mergeSort()")
-        Console.log("QuickSorted array: #strData.quickSort()")
+        Console.log("MergeSorted array: #{strData.mergeSort((a, b) => ((Comparable)a).compareTo((Comparable)b))}")
+        Console.log("QuickSorted array: #{strData.quickSort((a, b) => ((Comparable)a).compareTo((Comparable)b))}")
 
         Console.log("Concatted arrays: #{strData + otherStrData}")
-        Console.log("Concatted sorted array: #{(strData + otherStrData).sort()}")
+        Console.log("Concatted sorted array: #{(strData + otherStrData).sort((a, b) => ((Comparable)a).compareTo((Comparable)b))}")
 
         Console.log("Multiplied string: #{"hey" * 4}")
 
