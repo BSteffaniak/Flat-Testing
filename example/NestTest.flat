@@ -12,35 +12,33 @@ testable class NestTest {
         Console.waitForEnter()
     }
 
-    [Test "Testing primitive comparison"]
-    public testPrimitiveComparison() {
+    test `primitive comparison`() {
         let Int x = 5
 
         expect(x).toBe(5)
     }
 
-    [Test "Testing primitive not comparison"]
-    public testPrimitiveNotComparison() {
+    test `primitive not comparison`() {
         let Int x = 5
 
         expect(x).toNotBe(6)
     }
 
-    public test testNoMessageGiven() {}
+    test testNoMessageGiven() {}
 
-    public init_test beforeTest() {
+    init_test beforeTest() {
         Console.log("-- Before test --")
     }
 
-    public clean_test afterTest() {
+    clean_test afterTest() {
         Console.log("-- After test --")
     }
 
-    public init_test_class beforeClass() {
+    init_test_class beforeClass() {
         Console.log("-- Before test class --")
     }
 
-    public clean_test_class afterClass() {
+    clean_test_class afterClass() {
         Console.log("-- After test class --")
     }
 }
