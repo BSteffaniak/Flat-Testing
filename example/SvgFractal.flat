@@ -1,7 +1,7 @@
 package example
 
-import flat/svg/Svg;
-import flat/svg/SvgCircle;
+import flat/svg/Svg
+import flat/svg/SvgCircle
 import flat/svg/SvgComponentList
 import flat/io/File
 import flat/io/FileReader
