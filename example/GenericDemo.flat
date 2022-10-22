@@ -4,7 +4,7 @@ import flat/datastruct/list/Stack
 import flat/datastruct/HashMap
 
 class GenericDemo {
-    public static main(String args[]) {
+    public static main(String[] args) {
         Stack<String> strs = Stack()
 
         Console.writeLine("Pushing \"test\"")

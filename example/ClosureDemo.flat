@@ -1,7 +1,7 @@
 package example
 
 class ClosureDemo {
-    public static main(String args[]) {
+    public static main(String[] args) {
         ClosureDemo demo = ClosureDemo()
 
         demo.callClosure(multiply)

@@ -4,7 +4,7 @@ import flat/mysql/DBConnector
 import flat/mysql/ResultSet
 
 class DatabaseDemo {
-    public static main(String args[]) {
+    public static main(String[] args) {
         DBConnector connection = connect()
 
         ResultSet result = connection.query("select * from market")

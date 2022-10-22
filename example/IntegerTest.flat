@@ -6,7 +6,7 @@ import flat/datastruct/list/LinkedList
 import flat/datastruct/list/ListNode
 
 class IntegerTest {
-    public static main(String args[]) {
+    public static main(String[] args) {
         var c = 'y'
 
         while (c == 'y' || c == 'Y') {

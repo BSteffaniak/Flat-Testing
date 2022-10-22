@@ -3,7 +3,7 @@ package example
 import flat/time/Timer
 
 class MathDemo {
-    public static main(String args[]) {
+    public static main(String[] args) {
         Console.writeLine("Beginning benchmark...")
 
         Int iterations = 999999

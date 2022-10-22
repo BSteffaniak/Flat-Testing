@@ -13,7 +13,7 @@ class Bank {
 
     ConnectionSocket socket
 
-    public static async main(String args[]) {
+    public static async main(String[] args) {
         listenClients()
     }
 
