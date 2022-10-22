@@ -110,13 +110,13 @@ class Lab {
         //     Console.log("Async local at end: #local")
         // })
 
-        var sss = new String[4][2][1]
+        var sss = String[4][2][1]
 
         Console.writeLine(sss)
 
         Console.writeLine("Started async execution")
 
-        var multi = new String[][]
+        var multi = String[][]
 
         multi.add(["This is a test", "index 2"])
         multi.add(["Second dimension yo", "waddup"])
@@ -151,7 +151,7 @@ class Lab {
         takesString(x)
 
         if (true) {
-            x = new String[]
+            x = String[]
 
             x.add("hey")
             x.add("its now an array")
