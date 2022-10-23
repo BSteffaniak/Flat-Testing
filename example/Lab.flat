@@ -110,7 +110,7 @@ class Lab {
         //     Console.log("Async local at end: #local")
         // })
 
-        var sss = String[4][2][1]
+        var sss = String[][][]
 
         Console.writeLine(sss)
 
