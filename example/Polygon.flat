@@ -1,6 +1,6 @@
 package example
 
-public trait Polygon {
+trait Polygon {
     public numberSides() -> Int
     public calculateArea() -> Double
 }
