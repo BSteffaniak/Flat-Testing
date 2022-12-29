@@ -72,9 +72,6 @@ class SvgFractal {
 
         var writer = FileWriter(f)
 
-        writer.create()
-        writer.clearContents()
-
         s.generateHTMLOutput(writer)
 
         writer.close()
