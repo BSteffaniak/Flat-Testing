@@ -24,8 +24,6 @@ class DatabaseDemo {
         connection.query("insert into market values(#{id}, 6, 634, 3);")
 
         close(connection)
-
-        Console.waitForEnter()
     }
 
     static connect() -> DBConnector {

@@ -240,8 +240,6 @@ class Lab {
 
         benchmarkThreadLocals()
         benchmarkThreadLocals()
-
-        Console.waitForEnter()
     }
 
     [Target c]

@@ -13,8 +13,6 @@ class PolymorphismDemo {
         String description = getDescriptionOfAnimalWithNumberOfLegs(animals, 8)
 
         Console.writeLine("Searched for animal with 8 legs and found: #{description}")
-
-        Console.waitForEnter()
     }
 
     static getDescriptionOfAnimalWithNumberOfLegs(Animal[] animals, Int numLegs) -> String {

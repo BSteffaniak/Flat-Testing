@@ -8,8 +8,6 @@ testable class NestTest {
         let test = NestTest()
 
         test.runTests()
-
-        Console.waitForEnter()
     }
 
     test `primitive comparison`() {

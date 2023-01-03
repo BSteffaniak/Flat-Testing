@@ -24,11 +24,8 @@ class ThreadDemo {
             Console.writeLine("Time taken: " + timer.duration + "ms")
 
             Console.write("Run again? (Y/N) ")
-
-            c = Console.readChar()
         }
 
         Console.writeLine("\nFinished")
-        Console.waitForEnter()
     }
 }

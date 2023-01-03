@@ -39,7 +39,5 @@ class ServerDemo {
 
             Console.writeLine("Exiting")
         }
-
-        Console.waitForEnter()
     }
 }

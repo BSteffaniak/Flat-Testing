@@ -17,7 +17,5 @@ class Test {
         Int d = 5
 
         Console.writeLine("Comparison: " + d.compareTo(3))
-
-        Console.waitForEnter()
     }
 }

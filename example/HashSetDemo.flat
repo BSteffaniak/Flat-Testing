@@ -56,7 +56,5 @@ class HashSetDemo {
         var newStringTime = timer.stop().duration
 
         Console.writeLine("Took #{newStringTime}ms to create #count strings #{(newStringTime - stringTime) * 100 / stringTime}% overhead")
-
-        Console.waitForEnter()
     }
 }

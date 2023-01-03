@@ -14,7 +14,7 @@ class ClientInputThread extends Thread {
     public run() {
         //Console.write(socket.in.readString())
 
-        String username = Console.readLine()
+        String username = "Bob"//Console.readLine()
         socket.out.write(username)
 
         //Console.write(socket.in.readString())
@@ -25,7 +25,7 @@ class ClientInputThread extends Thread {
         while (socket.connected) {
 //            Console.write(socket.in.readString())
 
-            String input = Console.readLine()
+            String input = "Bob"//Console.readLine()
 
             socket.out.write(input)
         }

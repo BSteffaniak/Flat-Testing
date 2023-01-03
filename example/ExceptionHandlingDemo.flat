@@ -19,8 +19,6 @@ class ExceptionHandlingDemo {
         }
 
         Console.writeLine("After the try block.")
-
-        Console.waitForEnter()
     }
 
     static divide(Int num, Int den) -> Int {

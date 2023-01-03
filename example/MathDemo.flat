@@ -22,7 +22,5 @@ class MathDemo {
         timer.stop()
 
         Console.writeLine(iterations + " iterations of Math.sin() in " + timer.duration + "ms")
-
-        Console.waitForEnter()
     }
 }

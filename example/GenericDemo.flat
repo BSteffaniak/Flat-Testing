@@ -36,7 +36,5 @@ class GenericDemo {
 
             Console.writeLine("Popping: " + popped)
         }
-
-        Console.waitForEnter()
     }
 }

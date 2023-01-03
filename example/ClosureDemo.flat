@@ -6,8 +6,6 @@ class ClosureDemo {
 
         demo.callClosure(multiply)
         demo.callClosure(pow)
-
-        Console.waitForEnter()
     }
 
     callClosure(closure(Int, Int) -> Int) {

@@ -16,6 +16,5 @@ class SvgChart {
 
         Console.write("Done generating " + timer.duration)
 
-        Console.waitForEnter()
     }
 }

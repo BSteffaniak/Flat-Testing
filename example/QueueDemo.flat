@@ -17,7 +17,5 @@ class QueueDemo {
 
         Console.writeLine("Dequeued: " + num)
         Console.writeLine("Queue: " + q)*/
-
-        Console.waitForEnter()
     }
 }

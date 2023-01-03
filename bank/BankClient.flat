@@ -26,7 +26,7 @@ class BankClient {
                 while (!input || input == "YOU IMPOSTER!\n") {
                     Console.write(socket.connection.in.readString())
 
-                    String username = Console.readLine()
+                    String username = "Bob"//Console.readLine()
                     socket.connection.out.write(username)
 
                     Console.write(socket.connection.in.readString())
@@ -44,7 +44,7 @@ class BankClient {
                 thread.start()
 
                 while (true) {
-                    input = Console.readLine()
+                    input = ""//Console.readLine()
 
                     if (!socket.connection.connected) {
                         break

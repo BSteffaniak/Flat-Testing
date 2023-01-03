@@ -15,13 +15,13 @@ class SvgFractal {
         Double pi2 = Math.PI * 2
 
         Console.write("Enter the number of vertices: ")
-        Int numVerts = Console.readInt()
+        Int numVerts = 5//Console.readInt()
 
         Console.write("Enter the coefficient: ")
-        Double coefficient = Console.readDouble()
+        Double coefficient = 5//Console.readDouble()
 
         Console.write("Enter the number of points: ")
-        Int numPoints = Console.readInt()
+        Int numPoints = 5//Console.readInt()
 
         Timer timer = Timer().start()
 
@@ -79,7 +79,5 @@ class SvgFractal {
         timer.stop()
 
         Console.write("Done generating #timer.duration")
-
-        Console.waitForEnter()
     }
 }

@@ -31,7 +31,5 @@ class FileTest {
         }
 
         Console.writeLine("Press enter to exit...")
-
-        Console.waitForEnter()
     }
 }

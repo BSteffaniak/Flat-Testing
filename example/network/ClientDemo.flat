@@ -20,7 +20,7 @@ class ClientDemo {
             Console.writeLine("Connected!")
 
             while (socket.connection.connected) {
-                String message = Console.readLine()
+                String message = "q"//Console.readLine()
 
                 if (message == "q") {
                     socket.close()
@@ -34,8 +34,6 @@ class ClientDemo {
             socket.close()
         } else {
             Console.writeLine("Failed to connect")
-
-            Console.waitForEnter()
         }
     }
 }

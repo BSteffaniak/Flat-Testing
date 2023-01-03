@@ -37,11 +37,8 @@ class ArrayDemo {
             }
 
             Console.write("Run again? (Y/N)")
-
-            c = Console.readChar()
         }
 
         Console.writeLine("\nFinished")
-        Console.waitForEnter()
     }
 }

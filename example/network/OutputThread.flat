@@ -17,7 +17,7 @@ class OutputThread extends Thread {
 
     public run() {
         while (socket.connected) {
-            String message = Console.readLine()
+            String message = "q"//Console.readLine()
 
             if (message == "q") {
                 serverSocket.close()

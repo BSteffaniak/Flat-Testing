@@ -40,7 +40,5 @@ class HashMapDemo {
 
             Console.writeLine("Getting value at index " + index + " " + words.get(index))
         }*/
-
-        Console.waitForEnter()
     }
 }
