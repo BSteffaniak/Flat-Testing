@@ -1,11 +1,11 @@
 package example
 
-import novex/nest/Nest
-import novex/nest/TestSuite
+import flat/test/Test
+import flat/test/TestSuite
 
-testable class NestTest {
+testable class TestTest {
     public static async main(String[] args) {
-        let test = NestTest()
+        let test = TestTest()
 
         test.runTests()
     }

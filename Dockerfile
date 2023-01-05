@@ -17,8 +17,8 @@ COPY . ./Nova-Testing
 RUN git clone --depth 1 -b master https://github.com/NovaFoundation/Nova
 #ADD https://api.github.com/repos/NovaFoundation/Nova-JS/git/refs/heads/master js-version.json
 RUN git clone --depth 1 -b master https://github.com/NovaFoundation/Nova-JS
-#ADD https://api.github.com/repos/NovaFoundation/Nest/git/refs/heads/master nest-version.json
-RUN git clone --depth 1 -b master https://github.com/NovaFoundation/Nest
+#ADD https://api.github.com/repos/NovaFoundation/Test/git/refs/heads/master test-version.json
+RUN git clone --depth 1 -b master https://github.com/NovaFoundation/Test
 #ADD https://api.github.com/repos/NovaFoundation/Standard-Library/git/refs/heads/master std-lib-version.json
 RUN git clone --depth 1 -b master https://github.com/NovaFoundation/Standard-Library
 RUN mkdir Nova/out
@@ -38,7 +38,7 @@ RUN cd Nova/out/production/Nova && \
     cd ../../../../
 
 RUN cd Nova && \
-    java -jar Nova.jar ../Nova-Testing/example ../Nova-Testing/stabilitytest -l ../Nest -install-dir ../Nova-Testing/example -d ../NovaCompilerOutput/js -main stabilitytest/StabilityTest -o ../executable.js && \
+    java -jar Nova.jar ../Nova-Testing/example ../Nova-Testing/stabilitytest -l ../Test -install-dir ../Nova-Testing/example -d ../NovaCompilerOutput/js -main stabilitytest/StabilityTest -o ../executable.js && \
     cd ..
 
 FROM node:12.13.0-alpine
