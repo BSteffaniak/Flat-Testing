@@ -90,8 +90,8 @@ class Lab {
         //Console.writeLine("Sum: #list2.sum()")
 
         /*list.filter({ _.count > 10 }).map({ getClassByName(_) })
-            .forEach(x => {
-                Console.writeLine(x.fields.map({ _.name }).join(", "))
+            .forEach({
+                Console.writeLine(_x.fields.map({ _.name }).join(", "))
             })*/
 
         Console.log("Main local unset: #local")
@@ -124,10 +124,10 @@ class Lab {
         Console.writeLine("Multi dimensional array: #multi")
         Console.writeLine(multi[0][0].chars.toCharArray().contains('z').toString().capitalize())
 
-        Console.writeLine(list.map(x => {
-            var something = 5 * x.count
+        Console.writeLine(list.map({
+            var something = 5 * _x.count
 
-            return "#something #x"
+            return "#something #_x"
         }).join(", "))
 
         Console.writeLine("Mapped: " + list.filter({ _.count >= 4 }).map({ "#_2: #_1?" }).join(", "))
