@@ -3,9 +3,9 @@ package example
 import flat/test/Test
 import flat/test/TestSuite
 
-testable class TestTest {
+testable class {
     public static async main(String[] args) {
-        let test = TestTest()
+        let test = Test_Test()
 
         test.runTests()
     }

@@ -17,11 +17,12 @@
         "github:FlatLang/Network": "master",
         "github:FlatLang/Standard-Library": "master",
         "github:FlatLang/MySQL": "master",
-        "github:FlatLang/Math": "master"
+        "github:FlatLang/Math": "master",
+        "github:FlatLang/Svg": "master"
       }
     },
     "test": {
-      "source": "src/**/*_Test*.flat",
+      "source": "example/**/*_Test*.flat",
       "dependencies": {
         "github:FlatLang/Test": "master"
       }
