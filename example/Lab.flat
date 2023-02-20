@@ -1,23 +1,14 @@
 // Testing single line comment on first line.
 package example
 
-import flat/math/logic/WFF
-import flat/math/logic/InvalidFormulaException
-import flat/math/logic/StatementLetter
-import flat/datastruct/HashMap
-import flat/math/Vector3D
-import flat/math/Matrix
-import flat/network/ServerSocket
-import flat/math/NumericStatement
-import flat/datastruct/BinaryTree
-import flat/datastruct/list/Array
-import flat/datastruct/list/Iterator
-import flat/datastruct/list/LinkedList
-import flat/datastruct/list/List
-import flat/io/Curl
-import flat/thread/Thread
-import flat/thread/ThreadLocal
-import flat/time/Timer
+import flat/datastruct
+import flat/datastruct/list
+import flat/math
+import flat/network
+import flat/math
+import flat/io
+import flat/thread
+import flat/time
 
 class Lab {
     static thread_local var Int local = 122
@@ -40,19 +31,19 @@ class Lab {
         let strData = ["F", "B", "A", "D", "C", "E", "G", "I", "H"]
         let otherStrData = ["F", "B", "A", "D"]
 
-        var tree = BinaryTree(strData)
+        // var tree = BinaryTree(strData)
 
-        Console.writeLine("Preorder: #{tree.preorder().join(", ")}")
-        Console.writeLine("Inorder: #{tree.inorder().join(", ")}")
-        Console.writeLine("Postorder: #{tree.postorder().join(", ")}")
-        Console.writeLine("Levelorder: #{tree.levelorder().join(", ")}")
+        // Console.writeLine("Preorder: #{tree.preorder().join(", ")}")
+        // Console.writeLine("Inorder: #{tree.inorder().join(", ")}")
+        // Console.writeLine("Postorder: #{tree.postorder().join(", ")}")
+        // Console.writeLine("Levelorder: #{tree.levelorder().join(", ")}")
 
-        var Int num1 = 4
-        var Int num2
+        // var Int num1 = 4
+        // var Int num2
 
-        num2 = num1 = 7
+        // num2 = num1 = 7
 
-        Console.writeLine("My nums: #num1, #num2 hey: #tree.inorder()!")
+        // Console.writeLine("My nums: #num1, #num2 hey: #tree.inorder()!")
 
         Console.log("MergeSorted array: #{strData.mergeSort({ ((String)_a).compareTo((String)_b) })}")
         Console.log("QuickSorted array: #{strData.quickSort({ ((String)_a).compareTo((String)_b) })}")
@@ -62,7 +53,7 @@ class Lab {
 
         Console.log("Multiplied string: #{"hey" * 4}")
 
-        Console.writeLine("Result from ternary: #num1 #{ num1 < 3 ? "<" : ">=" } 3")
+        // Console.writeLine("Result from ternary: #num1 #{ num1 < 3 ? "<" : ">=" } 3")
 
         var str = "this isnt null"
         var str2 = null
